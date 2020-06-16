@@ -171,7 +171,7 @@ export default {
       data.append("categoryID", this.categoryID);
       data.append("ownerID", this.ownerID);
       data.append("stockQuantity", this.stockQuantity);
-      data.append("photo", this.selectedFile, this.fileName);
+      data.append("photo", this.selectedFile, this.selectedFile.name);
 
       let result = await this.$axios.$post(
         `http://localhost:3000/api/product`,
