@@ -16,14 +16,14 @@ export default {
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-      { rel: "stylesheet", href: "/css/all.css" },
+      { rel: "stylesheet", href: "/css/font-awesome/css/all.css" },
       { rel: "stylesheet", href: "/css/default.css" }
     ]
   },
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: "#fff" },
+  loading: { color: "#F2C964" },
   /*
    ** Global CSS
    */
