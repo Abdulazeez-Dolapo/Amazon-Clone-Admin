@@ -140,8 +140,6 @@ export default {
         productResponse
       ] = await Promise.all([categories, owners, product]);
 
-      console.log(productResponse);
-
       return {
         categories: categoryResponse.categories,
         owners: ownerResponse.owners,
@@ -166,7 +164,6 @@ export default {
   methods: {
     onFileSelected(event) {
       this.selectedFile = event.target.files[0];
-      console.log(this.selectedFile);
       this.fileName = event.target.files[0].name;
     },
     async updateProduct() {
