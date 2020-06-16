@@ -62,7 +62,7 @@
               </a>
               <span class="a-letter-space"></span>
               <span class="a-color-tertiary a-size-small asin-reviews"
-                >13242</span
+                >723</span
               >
             </div>
 
@@ -80,8 +80,10 @@
                 class="a-button-history margin-right-10"
                 >Update</nuxt-link
               >
-              <nuxt-link to="/product" class="a-button-history margin-right-10"
-                >Delete</nuxt-link
+              <a
+                @click="deleteProduct(product._id, index)"
+                class="a-button-history margin-right-10"
+                >Delete</a
               >
             </div>
           </div>
@@ -103,6 +105,20 @@ export default {
       };
     } catch (error) {
       console.log(error.message);
+    }
+  },
+  methods: {
+    async deleteProduct(id, index) {
+      try {
+        let response = await this.$axios.$delete(
+          `http://localhost:3000/api/product/${id}`
+        );
+        if (response) {
+          this.products.splice(index, index);
+        }
+      } catch (error) {
+        console.log(error.message);
+      }
     }
   }
 };
